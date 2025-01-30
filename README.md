@@ -1,5 +1,7 @@
-# Hi Ms. Rodriguez
+# Jahaan's Math Scrapbook
 
-If you are seeing this, this website is under construction and is not finished yet.
-It is available at the following link: <br>
+This is my very own math website designed to
+help people start to take interest in the foundation of math
+while having fun at the same time!<br>
+
 https://mathscrapbook.systemerr.com/
