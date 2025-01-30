@@ -21,14 +21,14 @@ export default function Home() {
                     <a href="/2048" className="btn btn-primary mt-3">Play 2048</a>
                 </div>
                 <div className="col">
-                    <img className="rounded-5" src="src/assets/2048.png" alt="2048"/>
+                    <img className="rounded-5" src="/assets/2048.png" alt="2048"/>
                 </div>
             </div>
         </div>
         <div className="container my-5 p-5 text-end shadow-lg rounded-5">
             <div className="row">
                 <div className="col">
-                    <img className="rounded-5" src="src/assets/pisong2.png" alt="pisong2"/>
+                    <img className="rounded-5" src="/assets/pisong2.png" alt="pisong2"/>
                 </div>
                 <div className="col">
                     <h1 className="display-3 fw-bold">The Pi Song 2.0</h1>
@@ -52,7 +52,7 @@ export default function Home() {
                     <a href="/mathtutor" className="btn btn-primary mt-3">Use Math Tutor</a>
                 </div>
                 <div className="col">
-                    <img className="rounded-5" src="src/assets/mathtutor.jpg" alt="mathtutor" style={{maxWidth: "600px"}}/>
+                    <img className="rounded-5" src="/assets/mathtutor.jpg" alt="mathtutor" style={{maxWidth: "600px"}}/>
                 </div>
             </div>
         </div>
