@@ -1,5 +1,10 @@
 import {useState} from "react";
 import OpenAI from "openai";
+import ReactMarkdown from 'react-markdown'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+
+import 'katex/dist/katex.min.css'
 
 export default function MathTutor() {
     const [input, setInput] = useState("")
@@ -27,8 +32,10 @@ export default function MathTutor() {
             <div className="row">
                 <form className="">
                     {messages.map((message, index) => (
-                        <input type="text" readOnly={true} value={message.content} key={index}
-                               className={`form-control text-wrap ${message.role === "user" ? "bg-primary-subtle" : "bg-success-subtle"} my-2`}/>
+                        <div key={index} className={`form-control ${message.role === "user" ? "bg-primary-subtle" : "bg-success-subtle"} my-2`}>
+                            {console.log(message.content)}
+                            <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{message.content}</ReactMarkdown>
+                        </div>
                     ))}
                 </form>
             </div>
@@ -47,7 +54,11 @@ export default function MathTutor() {
 
                     const chat = [{
                         role: "developer",
-                        content: "You are Math Tutor. Math Tutor is special AI Assistant designed by Jahaan Pardhanani that specializes in all kinds of math problems! It can help you with anything from simple addition to complex calculus problems. It is also very good at explaining topics in a simple and easy-to-understand way. No latex at all!!!"
+                        content: "You are Math Tutor." +
+                            "Math Tutor is special AI Assistant designed by Jahaan Pardhanani that specializes in all kinds of math problems!" +
+                            "It can help you with anything from simple addition to complex calculus problems." +
+                            "It is also very good at explaining topics in a simple and easy-to-understand way." +
+                            "Use only markdown, and wrap all math in latex and dollar signs, every single number or algebraic letter!!!"
                     },]
                     messages.forEach((message) => {
                         chat.push({role: message.role, content: message.content})
